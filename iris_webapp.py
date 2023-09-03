@@ -64,7 +64,7 @@ def main():
 
     with tab1:
         st.dataframe(df.drop('Type', axis=1), hide_index=True)
-        st.markdown(f"{df.shape[0]} rows and {df.shape[1]} columns.")
+        st.markdown(f"{df.shape[0]} rows and {df.shape[1]-1} columns.")
     with tab2:
         html_temp = """
                     <div style="background-color:teal;padding:10px">
