@@ -16,8 +16,6 @@ df.loc[df['Type'] == 0, "target_names"]='Iris-setosa'
 df.loc[df['Type'] == 1, "target_names"]='Iris-versicolor'
 df.loc[df['Type'] == 2, "target_names"]='Iris-virginica'
 
-df.drop('Type', axis=1)
-
 
 def classify(num):
     if num < 0.5:
@@ -65,7 +63,7 @@ def main():
     tab1, tab2 = st.tabs(["Data", "Owner"])
 
     with tab1:
-        st.dataframe(df)
+        st.dataframe(df.drop('Type', axis=1))
         st.markdown(f"{df.shape[0]} rows and {df.shape[1]} columns.")
     with tab2:
         html_temp = """
