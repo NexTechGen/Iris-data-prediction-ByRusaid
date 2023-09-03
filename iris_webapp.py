@@ -63,7 +63,7 @@ def main():
     tab1, tab2 = st.tabs(["Data", "Owner"])
 
     with tab1:
-        st.dataframe(df.drop('Type', axis=1))
+        st.dataframe(df.drop('Type', axis=1), hide_index=True)
         st.markdown(f"{df.shape[0]} rows and {df.shape[1]} columns.")
     with tab2:
         html_temp = """
